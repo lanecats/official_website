@@ -1,0 +1,52 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url('@/assets/font/HongLeiBanShuJianTi-2.ttf') format('woff2'),url('@/assets/font/HongLeiBanShuJianTi-2.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.search_article{
+
+    .article_title{
+        
+    }
+}
+
+:global{
+    .ant-modal{
+        color: #fff;
+        font-family: 'CustomFont', sans-serif;
+    }
+
+    .ant-modal-close-icon{
+        color: #fff;
+    }
+
+    .ant-modal-content{
+        background-color: rgba(255, 255, 255, 0.5) !important;
+        font-size: 30px !important;
+    }
+
+    .ant-modal-header{
+        background: none !important;
+        .ant-modal-title{
+            color: #fff;
+            background: none !important;
+            font-size: 30px !important;
+        }
+    }
+    
+    .ant-input-affix:focus,
+    .ant-input-affix-wrapper {
+        box-shadow: none !important;
+        border-color: #d9d9d9 !important;
+    }
+
+    .ant-input-search :where(.css-dev-only-do-not-override-zjzpde).ant-input-group .ant-input-affix-wrapper:not(:last-child){
+        border-radius: 6px;
+    }
+
+    .ant-input-group-addon{
+        display: none !important;
+    }
+}
