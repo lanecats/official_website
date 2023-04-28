@@ -1,0 +1,80 @@
+.home{
+    margin-top: '15%';
+
+    .demonstrate{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: aliceblue;
+        margin-top: 10%;
+
+        .demonstrate_title{
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 5% auto;
+            cursor: pointer;
+        }
+
+        .demonstrate_title:hover{
+            color: #FF4B60;
+            text-shadow: 4px 4px 6px #4bf3ff;
+            animation: shadow-blink 1s infinite;
+        }
+
+        @keyframes shadow-blink {
+            0% {
+                text-shadow: 4px 4px 6px #ba5858;
+            }
+            50% {
+                text-shadow: 6px 6px 10px #04e7ee;
+            }
+            100% {
+                text-shadow: 4px 4px 6px #c259c9;
+            }
+        }
+
+        .demonstrate_text{
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20%;
+        }
+
+        .demonstrate_icon{
+            border-radius: 50%;
+            font-size: 3rem;
+            cursor: pointer;
+            margin-top: 7%;
+            animation: jump 1s infinite;
+        }
+
+        @keyframes jump {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    }
+
+    .center{
+        display: flex;
+        justify-content: space-between;
+
+        .cord_item{
+            width: 60%;
+            margin-bottom: 3%;
+        }
+
+        .right{
+            width: 35%;
+        }
+    }
+
+    
+}
