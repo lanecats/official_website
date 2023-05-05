@@ -2,7 +2,7 @@
  * @Author: Leancats 927497187@qq.com
  * @Date: 2023-04-26 16:43:02
  * @LastEditors: Leancats 927497187@qq.com
- * @LastEditTime: 2023-05-05 10:15:40
+ * @LastEditTime: 2023-05-05 13:46:33
  * @FilePath: /official_website/src/components/About_Cord/index.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -52,6 +52,11 @@ const AboutCord: React.FC = () => {
                 <a href="https://github.com/lanecats/official_website" target="_blank">
                     <Iconfont type="icon-GitHub" />
                 </a>
+            </div>
+            <div className={aboutStyle.text}>
+                <div>文章：<span>{10}</span></div>
+                <div>标签：<span>{3}</span></div>
+                <div>分类：<span>{10}</span></div>
             </div>
         </div>
     )
