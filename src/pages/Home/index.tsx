@@ -2,7 +2,7 @@
  * @Author: Leancats 927497187@qq.com
  * @Date: 2023-04-24 10:56:50
  * @LastEditors: Leancats 927497187@qq.com
- * @LastEditTime: 2023-04-28 15:18:58
+ * @LastEditTime: 2023-05-04 15:25:52
  * @FilePath: /official_website/src/pages/Home/index.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -15,12 +15,13 @@ import AboutCord from '@/components/About_Cord'
 const Index: React.FC = () => {
 
     const [cordList, setCordList] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+    const height = window.innerHeight
 
     // 点击跳转到文章页面
     const formArticle = () => {
         console.log('formArticle')
         window.scrollTo({
-            top: 1000,
+            top: height === 1013 ? 1000 : height === 1266 ? 1250 : 800,
             behavior: 'smooth'
         });
     }
