@@ -7,29 +7,31 @@
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 import aboutStyle from './index.module.less';
-import { Popover } from 'antd';
+import {Popover} from 'antd';
 import portrait from '@/assets/image/wallhaven-l8wm6l.jpg'
-import { Iconfont } from '@/common/icons'
+import {Iconfont} from '@/common/icons'
 import qqImage from '@/assets/image/qq.png'
 import weiXin from '@/assets/image/Wechat.png'
-import { useMemo, useState } from 'react'
+import React, {useMemo, useState} from 'react'
 
 
 const AboutCord: React.FC = () => {
 
     const content = (
-        <img width={100} height={100} src={qqImage} />
+        <img width={100} height={100} src={qqImage} alt=""/>
     );
 
     const wxContent = (
-        <img width={100} height={100} src={weiXin} />
+        <img width={100} height={100} src={weiXin} alt=""/>
     );
 
     const [showArrow, setShowArrow] = useState(true);
     const [arrowAtCenter, setArrowAtCenter] = useState(false);
 
     const mergedArrow = useMemo(() => {
-        if (arrowAtCenter) return { pointAtCenter: true };
+        if (arrowAtCenter) return {pointAtCenter: true};
+        setShowArrow(true)
+        setArrowAtCenter(false)
         return showArrow;
     }, [showArrow, arrowAtCenter]);
 
@@ -39,6 +41,7 @@ const AboutCord: React.FC = () => {
             <div className={aboutStyle.cord_image}>
                 <img
                     src={portrait}
+                    alt=""
                 />
             </div>
             <div className={aboutStyle.title}>L<span>eacats</span></div>

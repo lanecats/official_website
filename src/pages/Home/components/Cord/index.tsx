@@ -8,17 +8,18 @@
  */
 import cordStyle from './index.module.less'
 import bgImageUrl from '@/assets/image/headerImage.jpg'
-import { Iconfont } from '@/common/icons';
-import { randomBrightColor } from '@/common/randomColor'
+import {Iconfont} from '@/common/icons';
+import {randomBrightColor} from '@/common/randomColor'
+import React from "react";
 
 interface CordProps {
-    title: string;
-    data: string;
-    time: string;
-    imageUrl: string;
-    message: number;
-    views: number;
-    tabs: string[];
+    title?: string;
+    data?: string;
+    time?: string;
+    imageUrl?: string;
+    message?: number;
+    views?: number;
+    tabs?: string[];
 }
 
 

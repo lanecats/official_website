@@ -8,8 +8,8 @@
  */
 import homeStyle from './index.module.less'
 import Cord from './components/Cord'
-import { useState } from 'react'
-import { Iconfont } from '@/common/icons'
+import React, {useState} from 'react'
+import {Iconfont} from '@/common/icons'
 import AboutCord from '@/components/About_Cord'
 
 const Index: React.FC = () => {
@@ -24,32 +24,33 @@ const Index: React.FC = () => {
             top: height === 1013 ? 1000 : height === 1266 ? 1250 : 800,
             behavior: 'smooth'
         });
+        setCordList([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
     }
 
     return (
         <div className={homeStyle.home}>
             <div className={homeStyle.demonstrate}>
-                <div className={homeStyle.demonstrate_title}>Leacats</div>
+                <div className={homeStyle.demonstrate_title}>Lea-cats</div>
                 <div className={homeStyle.demonstrate_text}>沾衣欲湿杏花雨，吹面不寒杨柳风。</div>
                 <div
                     className={homeStyle.demonstrate_icon}
                     onClick={formArticle}
                 >
-                    <Iconfont type='icon-diquxialajiantou' />
+                    <Iconfont type='icon-diquxialajiantou'/>
                 </div>
             </div>
             <div className={homeStyle.center}>
                 <div className={homeStyle.cord_item}>
                     {
-                        cordList?.map((item: any, index: any) => {
+                        cordList?.map((_, index: any) => {
                             return (
-                                <Cord key={index} />
+                                <Cord key={index}/>
                             )
                         })
                     }
                 </div>
                 <div className={homeStyle.right}>
-                    <AboutCord />
+                    <AboutCord/>
                 </div>
             </div>
         </div>
