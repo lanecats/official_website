@@ -7,39 +7,20 @@
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 import boardStyle from './index.module.less'
-import {Highlight, themes} from "prism-react-renderer"
 import React from "react";
+import Renderer from "@/components/Renderer";
 
-const codeBlock = `
-    function Index() {
+const Index: React.FC = () => {
+    const codeBlock = `function Index() {
         return (
-            <div className={boardStyle.board}>
-                
+            <div>   
+                123213
             </div>
         )
-    }
-`
-const Index: React.FC = () => {
+     }`
     return (
         <div className={boardStyle.board}>
-            <Highlight
-                theme={themes.shadesOfPurple}
-                code={codeBlock}
-                language="tsx"
-            >
-                {({style, tokens, getLineProps, getTokenProps}) => (
-                    <pre style={style}>
-                        {tokens.map((line, i) => (
-                            <div key={i} {...getLineProps({line})}>
-                                <span>{i + 1}</span>
-                                {line.map((token, key) => (
-                                    <span key={key} {...getTokenProps({token})} />
-                                ))}
-                            </div>
-                        ))}
-                    </pre>
-                )}
-            </Highlight>
+            <Renderer codeBlock={codeBlock}/>
         </div>
     )
 }

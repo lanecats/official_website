@@ -9,7 +9,7 @@
 import style from './index.module.less';
 import { useNavigate } from 'react-router';
 import { Iconfont } from '@/common/icons';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Search from './components/search';
 
 const Header: React.FC = () => {

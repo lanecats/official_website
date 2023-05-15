@@ -11,11 +11,13 @@ import Cord from './components/Cord'
 import React, {useState} from 'react'
 import {Iconfont} from '@/common/icons'
 import AboutCord from '@/components/About_Cord'
+// import Loading from "@/components/Loading ";
 
 const Index: React.FC = () => {
 
     const [cordList, setCordList] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
     const height = window.innerHeight
+    // const [loading, setLoading] = useState(true)
 
     // 点击跳转到文章页面
     const formArticle = () => {
@@ -25,35 +27,36 @@ const Index: React.FC = () => {
             behavior: 'smooth'
         });
         setCordList([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+        // setLoading(false)
     }
 
     return (
-        <div className={homeStyle.home}>
-            <div className={homeStyle.demonstrate}>
-                <div className={homeStyle.demonstrate_title}>Lea-cats</div>
-                <div className={homeStyle.demonstrate_text}>沾衣欲湿杏花雨，吹面不寒杨柳风。</div>
-                <div
-                    className={homeStyle.demonstrate_icon}
-                    onClick={formArticle}
-                >
-                    <Iconfont type='icon-diquxialajiantou'/>
+            <div className={homeStyle.home}>
+                <div className={homeStyle.demonstrate}>
+                    <div className={homeStyle.demonstrate_title}>Leancats</div>
+                    <div className={homeStyle.demonstrate_text}>沾衣欲湿杏花雨，吹面不寒杨柳风。</div>
+                    <div
+                        className={homeStyle.demonstrate_icon}
+                        onClick={formArticle}
+                    >
+                        <Iconfont type='icon-diquxialajiantou'/>
+                    </div>
+                </div>
+                <div className={homeStyle.center}>
+                    <div className={homeStyle.cord_item}>
+                        {
+                            cordList?.map((_, index: any) => {
+                                return (
+                                    <Cord key={index}/>
+                                )
+                            })
+                        }
+                    </div>
+                    <div className={homeStyle.right}>
+                        <AboutCord/>
+                    </div>
                 </div>
             </div>
-            <div className={homeStyle.center}>
-                <div className={homeStyle.cord_item}>
-                    {
-                        cordList?.map((_, index: any) => {
-                            return (
-                                <Cord key={index}/>
-                            )
-                        })
-                    }
-                </div>
-                <div className={homeStyle.right}>
-                    <AboutCord/>
-                </div>
-            </div>
-        </div>
     )
 }
 
