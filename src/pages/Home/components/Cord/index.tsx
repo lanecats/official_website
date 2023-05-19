@@ -35,7 +35,7 @@ const Cord: React.FC<CordProps> = ({ title, data, time, imageUrl, message, views
                     <div className={cordStyle.collimate} style={{ backgroundImage: `url(${imageUrl})` }} />
                 </div>
                 <div className={cordStyle.cord_title}>
-                    <div className={cordStyle.title_text}>{title}</div>
+                    <div className={cordStyle.title_text}><span>{title}</span></div>
                     <div className={cordStyle.title_time}>
                         <div className={cordStyle.time_text}>{time}</div>
                         <div className={cordStyle.time_icon}>
