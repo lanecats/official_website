@@ -1,9 +1,22 @@
 import React from "react";
-import recentStyles from './index.module.less'
+import recentStyles from './index.module.less';
 import {Iconfont} from "@/common/icons";
 
-const RecentPosts: React.FC = () => {
+interface PostProps {
+    title: string;
+    url?: string;
+    id: string
+}
 
+interface RecentPostsProps {
+    veggies: PostProps[];
+}
+
+const RecentPosts: React.FC<RecentPostsProps> = ({veggies}) => {
+
+    const handleClick = (id: string) => {
+        console.log(id)
+    }
     return (
         <div className={recentStyles.recent_posts}>
             <div className={recentStyles.title}>
@@ -11,21 +24,15 @@ const RecentPosts: React.FC = () => {
                 最近文章
             </div>
             <div className={recentStyles.recent_center}>
-                <div className={recentStyles.recent_item}>
-                    <span className={recentStyles.recent_text}>Nginx Access Log日志统计分析常用命令</span>
-                    <span className={recentStyles.recent_icon}><Iconfont type='icon-lianjie'/></span>
-                </div>
-                <div className={recentStyles.recent_item}>
-                    <span className={recentStyles.recent_text}>Nginx Access Log日志统计分析常用命令1221</span>
-                    <span className={recentStyles.recent_icon}><Iconfont type='icon-lianjie'/></span>
-                </div>
-                <div className={recentStyles.recent_item}>
-                    <span className={recentStyles.recent_text}> Nginx Access Log日志</span>
-                    <span className={recentStyles.recent_icon}><Iconfont type='icon-lianjie'/></span>
-                </div>
+                {veggies?.map(({title, id}, index) => (
+                    <div key={index} className={recentStyles.recent_item} onClick={() => handleClick(id)}>
+                        <span className={recentStyles.recent_text}>{title}</span>
+                        <span className={recentStyles.recent_icon}><Iconfont type='icon-lianjie'/></span>
+                    </div>
+                ))}
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default RecentPosts;

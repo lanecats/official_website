@@ -15,6 +15,12 @@ import AboutCord from '@/components/About_Cord'
 import Music_Player from "@/components/Music_Player";
 import Recent_Posts from "@/components/Recent_Posts";
 
+type HomeProps = {
+    id: string;
+    title: string;
+    url?: string;
+}
+
 const poemText = '沾衣欲湿杏花雨，吹面不寒杨柳风。';
 const Index: React.FC = () => {
 
@@ -23,6 +29,7 @@ const Index: React.FC = () => {
     const [chars, setChars] = useState<string[]>([]);
     const [isReversing, setIsReversing] = useState(false);
     const [isBlinking, setIsBlinking] = useState(true);
+    const [veggies, setVeggies] = useState<HomeProps[]>([]);
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -62,8 +69,31 @@ const Index: React.FC = () => {
             behavior: 'smooth'
         });
         setCordList([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+
         // setLoading(false)
     }
+
+    useEffect(() => {
+
+        const a: HomeProps[] = [
+            {
+                id: '12',
+                title: 'Nginx Access Log日志统计分析常用命令',
+                url: 'https://www.baidu.com'
+            },
+            {
+                id: '11',
+                title: 'Nginx Access Log日志统计常用命令',
+                url: 'https://www.baidu.com'
+            },
+            {
+                id: '13',
+                title: 'Nginx Access Log日志',
+                url: 'https://www.baidu.com'
+            }
+        ]
+        setVeggies(a)
+    }, [])
 
     return (
         <div className={homeStyle.home}>
@@ -85,7 +115,7 @@ const Index: React.FC = () => {
             <div className={homeStyle.center}>
                 <div className={homeStyle.cord_item}>
                     {
-                        cordList?.map((_, index: any) => {
+                        cordList?.map((_, index) => {
                             return (
                                 <Cord key={index}/>
                             )
@@ -95,7 +125,7 @@ const Index: React.FC = () => {
                 <div className={homeStyle.right}>
                     <AboutCord/>
                     <Music_Player/>
-                    <Recent_Posts/>
+                    <Recent_Posts veggies={veggies}/>
                 </div>
             </div>
         </div>
